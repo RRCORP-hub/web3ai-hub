@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RR.CORP Hub — Rahmat Agustiar | IACNNEXUS | RRCORP Nexus AI | Web3OpenProject</title>
+  <meta name="description" content="RR.CORP Hub — portal resmi Rahmat Agustiar. Akses IACNNEXUS, RRCORP Nexus AI, Web3OpenProject (pendanaan) dan profil resmi." />
+  <meta name="keywords" content="Rahmat Agustiar, RR.CORP, IACNNEXUS, RRCORP Nexus AI, Web3OpenProject, AI, Web3, Indonesia" />
+  <meta name="author" content="Rahmat Agustiar" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rahmatagustiar.netlify.app/" />
+
+  <!-- Structured data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rahmat Agustiar",
+    "url": "https://rahmatagustiar.netlify.app/",
+    "sameAs": [
+      "https://iacnnexus.netlify.app/",
+      "https://rrcorpnexusai.netlify.app/",
+      "https://web3openprojek.netlify.app/",
+      "https://tiktok.com/@rr.corp",
+      "https://youtube.com/@RRCORP.company",
+      "https://twitter.com/Companyrrcorp",
+      "https://github.com/RRCORP-hub"
+    ],
+    "jobTitle": "Founder RR.CORP",
+    "worksFor": { "@type": "Organization", "name": "RR.CORP" }
+  }
+  </script>
+
+  <!-- Tailwind via CDN for fast styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --accent: linear-gradient(90deg,#06b6d4,#7c3aed);
+    }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#030316 0%, #071029 100%); color:#e6eef8; margin:0}
+    .container{max-width:1200px;margin:0 auto;padding:40px 20px}
+    header{display:flex;align-items:center;gap:18px}
+    header .logo{width:56px;height:56px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{font-family:Orbitron,Inter, Arial; font-weight:800}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+    @media (max-width:950px){.grid{grid-template-columns:repeat(2,1fr)}} 
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--glass);border-radius:16px;padding:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);display:flex;flex-direction:column;gap:12px;min-height:220px}
+    .card h3{font-family:Orbitron,Inter;margin:0}
+    .meta{color:#9fb3d7;font-size:0.95rem}
+    .btn{padding:10px 14px;border-radius:10px;cursor:pointer;border:none;background-image:var(--accent);color:#041224;font-weight:700}
+    .btn-ghost{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef8}
+    .iframe-wrap{flex:1;margin-top:8px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+    iframe{width:100%;height:300px;border:0;display:block;background:#071029}
+    footer{margin-top:40px;padding:28px 0;text-align:center;color:#9fb3d7;font-size:0.95rem}
+    .socials a{margin:0 8px;color:#bfefff;font-size:20px}
+    /* Chat */
+    .chat-btn{position:fixed;right:24px;bottom:24px;background:var(--accent);border-radius:999px;padding:12px 14px;color:#041224;font-weight:700;z-index:1000;box-shadow:0 10px 30px rgba(2,6,23,0.6);display:flex;align-items:center;gap:10px}
+    .chat-panel{position:fixed;right:24px;bottom:86px;width:360px;background:linear-gradient(180deg,#071029, #061422);border-radius:14px;box-shadow:0 20px 50px rgba(2,6,23,0.7);overflow:hidden;z-index:1000;display:none}
+    .chat-header{background:linear-gradient(90deg,#00b4db,#7c3aed);padding:12px;color:#041224;font-weight:800}
+    .chat-body{padding:12px;height:300px;overflow:auto;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .chat-input{display:flex;gap:8px;padding:12px;background:var(--glass-2)}
+    .msg-user{background:linear-gradient(90deg,#667eea,#764ba2);padding:8px 12px;border-radius:12px;color:white;align-self:flex-end;max-width:80%}
+    .msg-bot{background:rgba(255,255,255,0.04);padding:8px 12px;border-radius:12px;color:#e6eef8;align-self:flex-start;max-width:80%}
+    .small{font-size:0.85rem;color:#9fb3d7}
+    .hint{font-size:0.85rem;color:#9fb3d7;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="mb-6">
+      <div class="logo"><i class="fas fa-infinity" style="color:#9be6ff;font-size:20px"></i></div>
+      <div>
+        <h1 class="text-2xl">RR.CORP Hub</h1>
+        <div class="small">Portal resmi Rahmat Agustiar — pusat akses IACNNEXUS, RRCORP Nexus AI, Web3OpenProject, dan profil.</div>
+      </div>
+    </header>
+
+    <!-- CTA -->
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+      <a class="btn" href="https://iacnnexus.netlify.app/" target="_blank">Open IACNNEXUS</a>
+      <a class="btn" href="https://rrcorpnexusai.netlify.app/" target="_blank">Open RRCORP Nexus AI</a>
+      <a class="btn" href="https://web3openprojek.netlify.app/" target="_blank">Open Web3OpenProject (Funding)</a>
+      <a class="btn-ghost" href="https://rahmatagustiar.netlify.app/" target="_blank">Profil Rahmat Agustiar</a>
+    </div>
+
+    <!-- Grid of previews -->
+    <div class="grid mt-6">
+      <div class="card">
+        <h3>IACNNEXUS</h3>
+        <div class="meta">Website utama — AI Civilization Nexus</div>
+        <div class="iframe-wrap" id="wrap-iacnnexus">
+          <iframe src="https://iacnnexus.netlify.app/" title="IACNNEXUS preview" loading="lazy"></iframe>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn" onclick="openSite('https://iacnnexus.netlify.app/')">Visit</button>
+          <button class="btn-ghost" onclick="toggleEmbed('wrap-iacnnexus')">Toggle Preview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>RRCORP Nexus AI</h3>
+        <div class="meta">Aplikasi AI & demo</div>
+        <div class="iframe-wrap" id="wrap-rrcorp">
+          <iframe src="https://rrcorpnexusai.netlify.app/" title="RRCORP Nexus AI preview" loading="lazy"></iframe>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn" onclick="openSite('https://rrcorpnexusai.netlify.app/')">Visit</button>
+          <button class="btn-ghost" onclick="toggleEmbed('wrap-rrcorp')">Toggle Preview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Web3OpenProject</h3>
+        <div class="meta">Pendanaan & token economy (dedicated)</div>
+        <div class="iframe-wrap" id="wrap-web3open">
+          <iframe src="https://web3openprojek.netlify.app/" title="Web3OpenProject preview" loading="lazy"></iframe>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn" onclick="openSite('https://web3openprojek.netlify.app/')">Visit</button>
+          <button class="btn-ghost" onclick="toggleEmbed('wrap-web3open')">Toggle Preview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Profil Rahmat Agustiar</h3>
+        <div class="meta">Official personal website</div>
+        <div class="iframe-wrap" id="wrap-profile">
+          <iframe src="https://rahmatagustiar.netlify.app/" title="Profile preview" loading="lazy"></iframe>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn" onclick="openSite('https://rahmatagustiar.netlify.app/')">Visit</button>
+          <button class="btn-ghost" onclick="toggleEmbed('wrap-profile')">Toggle Preview</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small explanation -->
+    <p class="hint">Catatan: beberapa website mungkin menolak ditampilkan dalam iframe (Content-Security-Policy). Jika preview tidak muncul, klik <strong>Visit</strong> untuk membuka di tab baru.</p>
+
+    <!-- Socials -->
+    <div style="text-align:center;margin-top:26px" class="socials">
+      <a href="https://tiktok.com/@rr.corp" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://youtube.com/@RRCORP.company" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://twitter.com/Companyrrcorp" target="_blank" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://github.com/RRCORP-hub" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+
+    <footer>
+      &copy; 2025 Rahmat Agustiar — RR.CORP • All projects central hub
+    </footer>
+  </div>
+
+  <!-- CHAT WIDGET (connects to /.netlify/functions/openai-chat if available) -->
+  <button class="chat-btn" id="chatBtn"><i class="fas fa-robot"></i> AI Assistant</button>
+
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="AI Assistant">
+    <div class="chat-header">AI Assistant — Ask about RR.CORP projects</div>
+    <div class="chat-body" id="chatBody">
+      <div class="msg-bot">Halo — tanya saya tentang IACNNEXUS, Nexus AI, Web3OpenProject, atau profil Rahmat Agustiar.</div>
+    </div>
+    <div class="chat-input">
+      <input id="chatText" placeholder="Ketik pertanyaan..." aria-label="Chat input" />
+      <button id="chatSend" class="btn">Kirim</button>
+    </div>
+  </div>
+
+  <script>
+    // small helper
+    function openSite(url){ window.open(url,'_blank'); }
+    function toggleEmbed(id){
+      const wrap = document.getElementById(id);
+      if(!wrap) return;
+      const iframe = wrap.querySelector('iframe');
+      if(!iframe) return;
+      // hide/show wrapper
+      wrap.style.display = wrap.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Chat controls
+    const chatBtn = document.getElementById('chatBtn');
+    const chatPanel = document.getElementById('chatPanel');
+    const chatSend = document.getElementById('chatSend');
+    const chatText = document.getElementById('chatText');
+    const chatBody = document.getElementById('chatBody');
+
+    chatBtn.addEventListener('click', ()=> {
+      const isVisible = chatPanel.style.display === 'block';
+      chatPanel.style.display = isVisible ? 'none' : 'block';
+    });
+
+    function appendChat(msg, from='bot'){
+      const el = document.createElement('div');
+      el.className = from === 'user' ? 'msg-user' : 'msg-bot';
+      el.textContent = msg;
+      chatBody.appendChild(el);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    async function callAI(message){
+      // Try Netlify Function first (safe, server-side API key). If not available, show hint.
+      try {
+        const res = await fetch('/.netlify/functions/openai-chat', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ message })
+        });
+        if(!res.ok){ throw new Error('AI service not available'); }
+        const data = await res.json();
+        return data.reply || 'Maaf, tidak ada balasan.';
+      } catch (err) {
+        return 'AI service belum aktif. Untuk mengaktifkan: deploy Netlify Function openai-chat dan set OPENAI_API_KEY.';
+      }
+    }
+
+    chatSend.addEventListener('click', async ()=>{
+      const txt = chatText.value.trim();
+      if(!txt) return;
+      appendChat(txt,'user');
+      chatText.value = '';
+      appendChat('Menjawab ...','bot');
+      // call AI
+      const reply = await callAI(txt);
+      // remove the last "Menjawab ..." placeholder (simple approach)
+      const nodes = chatBody.querySelectorAll('.msg-bot');
+      if(nodes.length) nodes[nodes.length-1].remove();
+      appendChat(reply,'bot');
+    });
+
+    chatText.addEventListener('keypress', (e)=>{ if(e.key==='Enter') chatSend.click(); });
+  </script>
+</body>
+</html>
