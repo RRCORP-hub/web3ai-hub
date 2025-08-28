@@ -1,195 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RR.CORP Web3 AI Hub</title>
-  <meta name="description" content="RR.CORP Web3 AI Hub by Rahmat Agustiar - Gateway to Infinite AI Civilization, Nexus AI, Web3 Funding, and Official Accounts.">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RR.CORP Web3 AI Hub - Infinite AI Civilization NEXUS. Gateway to all AI, Web3, and blockchain projects by Rahmat Agustiar.">
+  <meta name="keywords" content="RR.CORP, AI, Web3, Blockchain, Rahmat Agustiar, Infinite AI Civilization, Web3 Funding, AI Assistant">
+  <meta name="author" content="Rahmat Agustiar">
+  <title>RR.CORP Web3 AI Hub - Infinite AI Civilization NEXUS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #0a0a2a;
+      --secondary: #00f3ff;
+      --accent: #ff00c8;
+      --accent-2: #9d00ff;
+      --dark: #000;
+      --light: #ffffff;
+      --text: #e0e0e0;
+      --card-bg: rgba(10, 10, 42, 0.7);
+      --glow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #050505, #0d0d0d, #1a1a1a);
-      color: white;
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--dark);
+      overflow-x: hidden;
+      background: radial-gradient(circle at center, #0a0a2a 0%, #000000 70%);
+      min-height: 100vh;
     }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--light);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-shadow: var(--glow);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Header Styles */
     header {
-      padding: 40px 20px;
-      background: linear-gradient(90deg, #111, #222, #111);
-      border-bottom: 2px solid #00f5ff;
+      text-align: center;
+      padding: 40px 0;
+      background: rgba(10, 10, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 243, 255, 0.3);
     }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 3px solid var(--secondary);
+      box-shadow: var(--glow);
+      background: linear-gradient(45deg, var(--primary), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      color: var(--light);
+    }
+
     header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.5em;
-      color: #00f5ff;
-      margin: 0;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     header p {
-      color: #bbb;
-      font-size: 1.2em;
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
+
+    /* Main Content */
+    main {
+      padding: 50px 0;
+    }
+
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+      margin-bottom: 60px;
     }
-    section h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #00f5ff;
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+
+    .intro h2 {
+      font-size: 2.2rem;
       margin-bottom: 20px;
     }
-    .links a {
-      display: block;
-      margin: 10px 0;
-      color: #fff;
-      font-weight: 500;
-      text-decoration: none;
-      background: rgba(0, 245, 255, 0.1);
-      border: 1px solid #00f5ff;
-      padding: 12px;
-      border-radius: 12px;
-      transition: 0.3s;
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
-    .links a:hover {
-      background: #00f5ff;
-      color: #000;
+
+    /* Links Section */
+    .links {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      backdrop-filter: blur(5px);
     }
-    footer {
-      background: #111;
-      padding: 20px;
-      border-top: 2px solid #00f5ff;
-      font-size: 0.9em;
-      color: #777;
+
+    .links h2 {
+      margin-bottom: 20px;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    /* Chatbot Button */
-    #chatbot-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #00f5ff;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      padding: 12px 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 0 15px #00f5ff;
+
+    .links ul {
+      list-style: none;
+      margin-bottom: 30px;
     }
-    #chatbox {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      width: 300px;
-      height: 400px;
-      background: #111;
-      border: 1px solid #00f5ff;
-      border-radius: 12px;
-      display: none;
-      flex-direction: column;
+
+    .links li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    #chatbox header {
-      background: #00f5ff;
-      color: #000;
-      padding: 10px;
-      font-weight: bold;
+
+    .links li:last-child {
+      border-bottom: none;
     }
-    #chatbox .messages {
-      flex: 1;
-      padding: 10px;
+
+    /* Chatbot Section */
+    .chatbot {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    .chatbot h2 {
+      margin-bottom: 20px;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #chat-box {
+      height: 300px;
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
       overflow-y: auto;
-      text-align: left;
-      font-size: 0.9em;
+      background: rgba(0, 0, 0, 0.3);
     }
-    #chatbox input {
-      border: none;
-      padding: 10px;
-      width: calc(100% - 20px);
-      margin: 10px;
-      border-radius: 8px;
+
+    .message {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+
+    .user-message {
+      background: rgba(0, 243, 255, 0.2);
+      margin-left: auto;
+      border-bottom-right-radius: 0;
+    }
+
+    .bot-message {
+      background: rgba(157, 0, 255, 0.2);
+      margin-right: auto;
+      border-bottom-left-radius: 0;
+    }
+
+    .chat-input {
+      display: flex;
+      gap: 10px;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 12px 15px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      border-radius: 5px;
+      color: var(--light);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    #user-input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: var(--glow);
+    }
+
+    button {
+      padding: 12px 25px;
+      background: transparent;
+      color: var(--secondary);
+      border: 2px solid var(--secondary);
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    button:hover {
+      background: var(--secondary);
+      color: var(--dark);
+      box-shadow: var(--glow);
+    }
+
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .feature {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      transition: var(--transition);
+      backdrop-filter: blur(5px);
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      border-color: var(--secondary);
+      box-shadow: var(--glow);
+    }
+
+    .feature i {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      margin-bottom: 15px;
+      color: var(--light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background: rgba(10, 10, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(0, 243, 255, 0.3);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .intro h2 {
+        font-size: 1.8rem;
+      }
+      
+      .links li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+      
+      .chat-input {
+        flex-direction: column;
+      }
+      
+      button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>RR.CORP Web3 AI Hub</h1>
-    <p>Gateway to Infinite AI Civilization NEXUS, Nexus AI, Web3 Funding & Official Accounts</p>
+    <div class="container">
+      <div class="logo">RRC</div>
+      <h1>🌌 Infinite AI Civilization NEXUS 🌌</h1>
+      <p>By Rahmat Agustiar</p>
+    </div>
   </header>
 
-  <!-- Profil -->
-  <section>
-    <h2>🌐 Profil</h2>
-    <div class="links">
-      <a href="https://rahmatagustiar.netlify.app/" target="_blank">Profil Rahmat Agustiar</a>
-    </div>
-  </section>
+  <!-- Main Section -->
+  <main class="container">
+    <section class="intro fade-in">
+      <h2>Welcome to RR.CORP Web3 AI Hub</h2>
+      <p>
+        This is the official gateway to all projects, platforms, and initiatives of 
+        <strong>RR.CORP</strong> — combining AI, Web3, and global innovation. Explore our ecosystem and join the future of decentralized technology.
+      </p>
+    </section>
 
-  <!-- Project AI -->
-  <section>
-    <h2>🤖 Project AI Civilization</h2>
-    <div class="links">
-      <a href="https://iacnnexus.netlify.app/" target="_blank">Infinite AI Civilization NEXUS</a>
-      <a href="https://rrcorpnexusai.netlify.app/" target="_blank">RR.CORP Nexus AI App</a>
-    </div>
-  </section>
+    <!-- Features -->
+    <section class="features">
+      <div class="feature fade-in">
+        <i class="fas fa-brain"></i>
+        <h3>AI-Powered Solutions</h3>
+        <p>Advanced artificial intelligence systems for the next generation of applications</p>
+      </div>
+      <div class="feature fade-in" style="animation-delay: 0.2s;">
+        <i class="fas fa-link"></i>
+        <h3>Web3 Integration</h3>
+        <p>Blockchain technology and decentralized applications for a better internet</p>
+      </div>
+      <div class="feature fade-in" style="animation-delay: 0.4s;">
+        <i class="fas fa-globe"></i>
+        <h3>Global Community</h3>
+        <p>Join thousands of innovators and developers worldwide</p>
+      </div>
+    </section>
 
-  <!-- Web3 Funding -->
-  <section>
-    <h2>💠 Web3 Funding</h2>
-    <div class="links">
-      <a href="https://web3openprojek.netlify.app/" target="_blank">Web3 Open Project (Pendanaan)</a>
-    </div>
-  </section>
+    <!-- Official Links -->
+    <section class="links fade-in">
+      <h2><i class="fas fa-link"></i> Official Platforms</h2>
+      <ul>
+        <li><i class="fas fa-globe"></i> <strong>Main Website:</strong> <a href="https://rahmatagustiar.netlify.app/" target="_blank">rahmatagustiar.netlify.app</a></li>
+        <li><i class="fas fa-project-diagram"></i> <strong>Nexus Platform:</strong> <a href="https://iacnnexus.netlify.app/" target="_blank">iacnnexus.netlify.app</a></li>
+        <li><i class="fas fa-robot"></i> <strong>AI Application:</strong> <a href="https://rrcorpnexusai.netlify.app/" target="_blank">rrcorpnexusai.netlify.app</a></li>
+        <li><i class="fas fa-donate"></i> <strong>Web3 Funding:</strong> <a href="https://web3openprojek.netlify.app/" target="_blank">web3openprojek.netlify.app</a></li>
+      </ul>
 
-  <!-- Social Media -->
-  <section>
-    <h2>📲 Akun Resmi</h2>
-    <div class="links">
-      <a href="https://www.tiktok.com/@rr.corp" target="_blank">TikTok: @rr.corp</a>
-      <a href="https://www.youtube.com/@RRCORP.company" target="_blank">YouTube: @RRCORP.company</a>
-      <a href="https://x.com/Companyrrcorp" target="_blank">X (Twitter): @Companyrrcorp</a>
-      <a href="https://github.com/RRCORP-hub" target="_blank">GitHub: RRCORP-hub</a>
-      <a href="https://instagram.com/rr.corp.official" target="_blank">Instagram: @rr.corp.official</a>
-      <a href="https://facebook.com/RRCORPHolding" target="_blank">Facebook Page: RR.CORP Holding</a>
-      <a href="https://linkedin.com/company/rrcorp-holding" target="_blank">LinkedIn: RR.CORP Holding</a>
-      <a href="https://t.me/rrcorpcommunity" target="_blank">Telegram Group: RR.CORP Community</a>
-    </div>
-  </section>
+      <h2><i class="fas fa-share-alt"></i> Social Media</h2>
+      <ul>
+        <li><i class="fab fa-tiktok"></i> <strong>TikTok:</strong> <a href="https://tiktok.com/@rr.corp" target="_blank">@rr.corp</a></li>
+        <li><i class="fab fa-youtube"></i> <strong>YouTube:</strong> <a href="https://youtube.com/@RRCORP.company" target="_blank">@RRCORP.company</a></li>
+        <li><i class="fab fa-twitter"></i> <strong>X (Twitter):</strong> <a href="https://x.com/Companyrrcorp" target="_blank">@Companyrrcorp</a></li>
+        <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/RRCORP-hub" target="_blank">RRCORP-hub</a></li>
+        <li><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/rr.corp.official" target="_blank">@rr.corp.official</a></li>
+        <li><i class="fab fa-facebook"></i> <strong>Facebook:</strong> <a href="https://facebook.com/RR.CORP Holding" target="_blank">RR.CORP Holding</a></li>
+        <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/rrcorp-holding" target="_blank">RR.CORP Holding</a></li>
+        <li><i class="fab fa-telegram"></i> <strong>Telegram:</strong> <a href="https://t.me/rrcorpcommunity" target="_blank">t.me/rrcorpcommunity</a></li>
+      </ul>
+    </section>
 
+    <!-- AI Chatbot -->
+    <section class="chatbot fade-in">
+      <h2><i class="fas fa-robot"></i> AI Assistant</h2>
+      <div id="chat-box">
+        <div class="message bot-message">
+          Hello! I'm RR.CORP AI Assistant. How can I help you today?
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask me anything about RR.CORP..." />
+        <button onclick="sendMessage()">Send <i class="fas fa-paper-plane"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    © 2025 RR.CORP Web3 AI Hub | Powered by Rahmat Agustiar
+    <div class="container">
+      <p>© 2025 RR.CORP - Infinite AI Civilization NEXUS. All rights reserved.</p>
+    </div>
   </footer>
 
-  <!-- Chatbot -->
-  <button id="chatbot-btn">💬 Chat AI</button>
-  <div id="chatbox">
-    <header>RR.CORP AI</header>
-    <div class="messages" id="messages"></div>
-    <input type="text" id="userInput" placeholder="Tulis pesan...">
-  </div>
-
   <script>
-    const btn = document.getElementById("chatbot-btn");
-    const box = document.getElementById("chatbox");
-    const input = document.getElementById("userInput");
-    const messages = document.getElementById("messages");
-
-    btn.addEventListener("click", () => {
-      box.style.display = box.style.display === "flex" ? "none" : "flex";
-    });
-
-    input.addEventListener("keypress", async (e) => {
-      if (e.key === "Enter") {
-        let userMsg = input.value;
-        input.value = "";
-        messages.innerHTML += `<div><b>You:</b> ${userMsg}</div>`;
-        messages.scrollTop = messages.scrollHeight;
-
-        // Placeholder AI response
-        messages.innerHTML += `<div><b>AI:</b> Saya sedang terhubung ke sistem RR.CORP. Untuk versi penuh gunakan integrasi OpenAI API.</div>`;
-        messages.scrollTop = messages.scrollHeight;
+    // AI Chatbot functionality
+    function sendMessage() {
+      const userInput = document.getElementById('user-input');
+      const message = userInput.value.trim();
+      
+      if (message === '') return;
+      
+      // Add user message to chat
+      addMessage(message, 'user');
+      
+      // Process and generate response
+      setTimeout(() => {
+        const response = generateResponse(message);
+        addMessage(response, 'bot');
+      }, 1000);
+      
+      // Clear input
+      userInput.value = '';
+    }
+    
+    function addMessage(text, sender) {
+      const chatBox = document.getElementById('chat-box');
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', `${sender}-message`);
+      messageDiv.textContent = text;
+      chatBox.appendChild(messageDiv);
+      
+      // Scroll to bottom
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+    
+    function generateResponse(input) {
+      const lowerInput = input.toLowerCase();
+      
+      // Define responses based on keywords
+      if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
+        return "Hello there! How can I assist you with RR.CORP today?";
+      } else if (lowerInput.includes('project') || lowerInput.includes('initiative')) {
+        return "RR.CORP is working on multiple AI and Web3 projects including AI assistants, blockchain platforms, and decentralized funding systems.";
+      } else if (lowerInput.includes('contact') || lowerInput.includes('email') || lowerInput.includes('reach')) {
+        return "You can reach us through our social media channels or via our website contact forms.";
+      } else if (lowerInput.includes('ai') || lowerInput.includes('artificial intelligence')) {
+        return "RR.CORP develops advanced AI systems for various applications including natural language processing, computer vision, and predictive analytics.";
+      } else if (lowerInput.includes('web3') || lowerInput.includes('blockchain') || lowerInput.includes('crypto')) {
+        return "Our Web3 initiatives focus on decentralized applications, smart contracts, and blockchain-based solutions for various industries.";
+      } else if (lowerInput.includes('funding') || lowerInput.includes('donate') || lowerInput.includes('invest')) {
+        return "We have a Web3 funding platform at web3openprojek.netlify.app where you can support innovative projects.";
+      } else {
+        return "Thank you for your message. Is there anything specific you'd like to know about RR.CORP and our projects?";
+      }
+    }
+    
+    // Allow sending message with Enter key
+    document.getElementById('user-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
       }
     });
+    
+    // Add some initial messages to demonstrate the chat
+    setTimeout(() => {
+      addMessage("You can ask me about RR.CORP projects, AI technology, Web3 initiatives, or how to get involved!", 'bot');
+    }, 2000);
   </script>
 </body>
 </html>
