@@ -1,484 +1,1191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RR.CORP Web3 AI Hub - Infinite AI Civilization NEXUS. Gateway to all AI, Web3, and blockchain projects by Rahmat Agustiar.">
-  <meta name="keywords" content="RR.CORP, AI, Web3, Blockchain, Rahmat Agustiar, Infinite AI Civilization, Web3 Funding, AI Assistant">
-  <meta name="author" content="Rahmat Agustiar">
-  <title>RR.CORP Web3 AI Hub - Infinite AI Civilization NEXUS</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #0a0a2a;
-      --secondary: #00f3ff;
-      --accent: #ff00c8;
-      --accent-2: #9d00ff;
-      --dark: #000;
-      --light: #ffffff;
-      --text: #e0e0e0;
-      --card-bg: rgba(10, 10, 42, 0.7);
-      --glow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
-      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RR.CORP - Web3 AI Hub | Infinite AI Civilization NEXUS</title>
+    <meta name="description" content="Portal utama RR.CORP - menghubungkan semua platform AI, Web3, dan blockchain. Jelajahi ekosistem lengkap karya Rahmat Agustiar.">
+    <meta name="keywords" content="RR.CORP, Rahmat Agustiar, AI, Web3, Blockchain, NFT, Metaverse, Crypto, Web3OpenProjek, Infinite AI Civilization">
+    <meta name="author" content="Rahmat Agustiar">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="RR.CORP - Web3 AI Hub">
+    <meta property="og:description" content="Portal utama RR.CORP - menghubungkan semua platform AI, Web3, dan blockchain">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://web3aihub.rrcorp.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #0a0a2a;
+            --secondary: #00f3ff;
+            --accent: #ff00c8;
+            --accent-2: #9d00ff;
+            --success: #00ff8e;
+            --dark: #000;
+            --light: #ffffff;
+            --text: #e0e0e0;
+            --text-light: #a0a0b0;
+            --card-bg: rgba(10, 10, 42, 0.7);
+            --glow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+            --accent-glow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+            --success-glow: 0 0 10px var(--success), 0 0 20px var(--success);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background-color: var(--dark);
-      overflow-x: hidden;
-      background: radial-gradient(circle at center, #0a0a2a 0%, #000000 70%);
-      min-height: 100vh;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      color: var(--light);
-    }
+        body {
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--dark);
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, #0a0a2a 0%, #000000 70%);
+            min-height: 100vh;
+        }
 
-    a {
-      text-decoration: none;
-      color: var(--secondary);
-      transition: var(--transition);
-    }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
 
-    a:hover {
-      color: var(--accent);
-      text-shadow: var(--glow);
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
+        ul {
+            list-style: none;
+        }
 
-    /* Header Styles */
-    header {
-      text-align: center;
-      padding: 40px 0;
-      background: rgba(10, 10, 42, 0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 243, 255, 0.3);
-    }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-    .logo {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      border: 3px solid var(--secondary);
-      box-shadow: var(--glow);
-      background: linear-gradient(45deg, var(--primary), var(--accent-2));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 50px;
-      color: var(--light);
-    }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      background: linear-gradient(45deg, var(--secondary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.3), transparent);
+            transition: var(--transition);
+            z-index: -1;
+        }
 
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+        .btn:hover {
+            color: var(--dark);
+            background: var(--secondary);
+            box-shadow: var(--glow);
+            transform: translateY(-5px);
+        }
 
-    /* Main Content */
-    main {
-      padding: 50px 0;
-    }
+        .btn:hover::before {
+            left: 100%;
+        }
 
-    section {
-      margin-bottom: 60px;
-    }
+        .btn-accent {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
 
-    .intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 50px;
-    }
+        .btn-accent:hover {
+            background: var(--accent);
+            box-shadow: var(--accent-glow);
+        }
 
-    .intro h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
+        .btn-success {
+            color: var(--success);
+            border-color: var(--success);
+        }
 
-    .intro p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+        .btn-success:hover {
+            background: var(--success);
+            box-shadow: var(--success-glow);
+            color: var(--dark);
+        }
 
-    /* Links Section */
-    .links {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px;
-      border: 1px solid rgba(0, 243, 255, 0.2);
-      backdrop-filter: blur(5px);
-    }
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
 
-    .links h2 {
-      margin-bottom: 20px;
-      color: var(--secondary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
 
-    .links ul {
-      list-style: none;
-      margin-bottom: 30px;
-    }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            margin: 20px auto;
+            border-radius: 2px;
+        }
 
-    .links li {
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        /* Particles Background */
+        .particles-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
 
-    .links li:last-child {
-      border-bottom: none;
-    }
+        .particle {
+            position: absolute;
+            background-color: rgba(0, 243, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-    /* Chatbot Section */
-    .chatbot {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px;
-      border: 1px solid rgba(0, 243, 255, 0.2);
-      backdrop-filter: blur(5px);
-    }
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+        }
 
-    .chatbot h2 {
-      margin-bottom: 20px;
-      color: var(--secondary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .preloader-spinner {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(0, 243, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary);
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
 
-    #chat-box {
-      height: 300px;
-      border: 1px solid rgba(0, 243, 255, 0.3);
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 15px;
-      overflow-y: auto;
-      background: rgba(0, 0, 0, 0.3);
-    }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-    .message {
-      margin-bottom: 15px;
-      padding: 10px 15px;
-      border-radius: 10px;
-      max-width: 80%;
-    }
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 42, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transition: var(--transition);
+        }
 
-    .user-message {
-      background: rgba(0, 243, 255, 0.2);
-      margin-left: auto;
-      border-bottom-right-radius: 0;
-    }
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(10, 10, 42, 0.95);
+        }
 
-    .bot-message {
-      background: rgba(157, 0, 255, 0.2);
-      margin-right: auto;
-      border-bottom-left-radius: 0;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
 
-    .chat-input {
-      display: flex;
-      gap: 10px;
-    }
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    #user-input {
-      flex: 1;
-      padding: 12px 15px;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(0, 243, 255, 0.3);
-      border-radius: 5px;
-      color: var(--light);
-      font-family: inherit;
-      font-size: 1rem;
-    }
+        .logo span {
+            color: var(--secondary);
+        }
 
-    #user-input:focus {
-      outline: none;
-      border-color: var(--secondary);
-      box-shadow: var(--glow);
-    }
+        .nav-links {
+            display: flex;
+        }
 
-    button {
-      padding: 12px 25px;
-      background: transparent;
-      color: var(--secondary);
-      border: 2px solid var(--secondary);
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      font-family: inherit;
-    }
+        .nav-links li {
+            margin-left: 30px;
+        }
 
-    button:hover {
-      background: var(--secondary);
-      color: var(--dark);
-      box-shadow: var(--glow);
-    }
+        .nav-links a {
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
 
-    /* Features Grid */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+            z-index: -1;
+        }
 
-    .feature {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px;
-      text-align: center;
-      border: 1px solid rgba(0, 243, 255, 0.2);
-      transition: var(--transition);
-      backdrop-filter: blur(5px);
-    }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
 
-    .feature:hover {
-      transform: translateY(-10px);
-      border-color: var(--secondary);
-      box-shadow: var(--glow);
-    }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-    .feature i {
-      font-size: 3rem;
-      color: var(--secondary);
-      margin-bottom: 20px;
-    }
+        .wallet-connect {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .feature h3 {
-      margin-bottom: 15px;
-      color: var(--light);
-    }
+        .wallet-info {
+            background: rgba(0, 243, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      background: rgba(10, 10, 42, 0.8);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(0, 243, 255, 0.3);
-    }
+        .wallet-info.connected {
+            background: rgba(0, 255, 142, 0.1);
+            border-color: var(--success);
+        }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--light);
+            font-size: 1.5rem;
+        }
 
-    .fade-in {
-      animation: fadeIn 1s ease forwards;
-    }
+        /* Hero Section */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      
-      .intro h2 {
-        font-size: 1.8rem;
-      }
-      
-      .links li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-      }
-      
-      .chat-input {
-        flex-direction: column;
-      }
-      
-      button {
-        width: 100%;
-      }
-    }
-  </style>
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .trust-badge i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .trust-badge h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .trust-badge p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Platform Grid */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .platform-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            backdrop-filter: blur(5px);
+            text-align: center;
+            padding: 30px;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .platform-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Social Media Section */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .social-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .social-card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        /* AI Assistant */
+        .ai-assistant {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .chat-container {
+            height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .message {
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: rgba(0, 243, 255, 0.2);
+            margin-left: auto;
+            border-bottom-right-radius: 0;
+        }
+
+        .bot-message {
+            background: rgba(157, 0, 255, 0.2);
+            margin-right: auto;
+            border-bottom-left-radius: 0;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            border-radius: 5px;
+            color: var(--light);
+            font-family: inherit;
+        }
+
+        .chat-input input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 42, 0.9);
+            color: white;
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(0, 243, 255, 0.3);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo span {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 243, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: var(--glow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 42, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .wallet-connect {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="logo">RRC</div>
-      <h1>🌌 Infinite AI Civilization NEXUS 🌌</h1>
-      <p>By Rahmat Agustiar</p>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-spinner"></div>
+        <p>Memuat RR.CORP Web3 AI Hub...</p>
     </div>
-  </header>
 
-  <!-- Main Section -->
-  <main class="container">
-    <section class="intro fade-in">
-      <h2>Welcome to RR.CORP Web3 AI Hub</h2>
-      <p>
-        This is the official gateway to all projects, platforms, and initiatives of 
-        <strong>RR.CORP</strong> — combining AI, Web3, and global innovation. Explore our ecosystem and join the future of decentralized technology.
-      </p>
-    </section>
+    <!-- Particles Background -->
+    <div class="particles-container" id="particles-container"></div>
 
-    <!-- Features -->
-    <section class="features">
-      <div class="feature fade-in">
-        <i class="fas fa-brain"></i>
-        <h3>AI-Powered Solutions</h3>
-        <p>Advanced artificial intelligence systems for the next generation of applications</p>
-      </div>
-      <div class="feature fade-in" style="animation-delay: 0.2s;">
-        <i class="fas fa-link"></i>
-        <h3>Web3 Integration</h3>
-        <p>Blockchain technology and decentralized applications for a better internet</p>
-      </div>
-      <div class="feature fade-in" style="animation-delay: 0.4s;">
-        <i class="fas fa-globe"></i>
-        <h3>Global Community</h3>
-        <p>Join thousands of innovators and developers worldwide</p>
-      </div>
-    </section>
-
-    <!-- Official Links -->
-    <section class="links fade-in">
-      <h2><i class="fas fa-link"></i> Official Platforms</h2>
-      <ul>
-        <li><i class="fas fa-globe"></i> <strong>Main Website:</strong> <a href="https://rahmatagustiar.netlify.app/" target="_blank">rahmatagustiar.netlify.app</a></li>
-        <li><i class="fas fa-project-diagram"></i> <strong>Nexus Platform:</strong> <a href="https://iacnnexus.netlify.app/" target="_blank">iacnnexus.netlify.app</a></li>
-        <li><i class="fas fa-robot"></i> <strong>AI Application:</strong> <a href="https://rrcorpnexusai.netlify.app/" target="_blank">rrcorpnexusai.netlify.app</a></li>
-        <li><i class="fas fa-donate"></i> <strong>Web3 Funding:</strong> <a href="https://web3openprojek.netlify.app/" target="_blank">web3openprojek.netlify.app</a></li>
-      </ul>
-
-      <h2><i class="fas fa-share-alt"></i> Social Media</h2>
-      <ul>
-        <li><i class="fab fa-tiktok"></i> <strong>TikTok:</strong> <a href="https://tiktok.com/@rr.corp" target="_blank">@rr.corp</a></li>
-        <li><i class="fab fa-youtube"></i> <strong>YouTube:</strong> <a href="https://youtube.com/@RRCORP.company" target="_blank">@RRCORP.company</a></li>
-        <li><i class="fab fa-twitter"></i> <strong>X (Twitter):</strong> <a href="https://x.com/Companyrrcorp" target="_blank">@Companyrrcorp</a></li>
-        <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/RRCORP-hub" target="_blank">RRCORP-hub</a></li>
-        <li><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/rr.corp.official" target="_blank">@rr.corp.official</a></li>
-        <li><i class="fab fa-facebook"></i> <strong>Facebook:</strong> <a href="https://facebook.com/RR.CORP Holding" target="_blank">RR.CORP Holding</a></li>
-        <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/rrcorp-holding" target="_blank">RR.CORP Holding</a></li>
-        <li><i class="fab fa-telegram"></i> <strong>Telegram:</strong> <a href="https://t.me/rrcorpcommunity" target="_blank">t.me/rrcorpcommunity</a></li>
-      </ul>
-    </section>
-
-    <!-- AI Chatbot -->
-    <section class="chatbot fade-in">
-      <h2><i class="fas fa-robot"></i> AI Assistant</h2>
-      <div id="chat-box">
-        <div class="message bot-message">
-          Hello! I'm RR.CORP AI Assistant. How can I help you today?
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-cube"></i>
+                    RR<span>.CORP</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#platforms">Platform</a></li>
+                    <li><a href="#social">Media Sosial</a></li>
+                    <li><a href="#ai">AI Assistant</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                </ul>
+                <div class="wallet-connect">
+                    <div class="wallet-info" id="walletInfo">
+                        <i class="fas fa-wallet"></i>
+                        <span id="walletStatus">Belum Terhubung</span>
+                    </div>
+                    <button class="btn" id="connectWallet">Hubungkan Wallet</button>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-      </div>
-      <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Ask me anything about RR.CORP..." />
-        <button onclick="sendMessage()">Send <i class="fas fa-paper-plane"></i></button>
-      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>RR.CORP Web3 AI Hub</h1>
+                <p>Portal utama menuju semua platform AI, Web3, dan blockchain karya Rahmat Agustiar. Jelajahi ekosistem lengkap inovasi teknologi masa depan.</p>
+                <div class="hero-buttons">
+                    <a href="#platforms" class="btn">Jelajahi Platform</a>
+                    <a href="#ai" class="btn btn-accent">AI Assistant</a>
+                    <a href="#social" class="btn btn-success">Media Sosial</a>
+                </div>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge fade-in">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>100% Terdesentralisasi</h3>
+                        <p>Semua platform berbasis blockchain</p>
+                    </div>
+                    <div class="trust-badge fade-in delay-1">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI Canggih</h3>
+                        <p>Ditenagai kecerdasan buatan terbaru</p>
+                    </div>
+                    <div class="trust-badge fade-in delay-2">
+                        <i class="fas fa-globe"></i>
+                        <h3>Ekosistem Global</h3>
+                        <p>Jutaan pengguna di seluruh dunia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 RR.CORP - Infinite AI Civilization NEXUS. All rights reserved.</p>
-    </div>
-  </footer>
+    <!-- Platforms Section -->
+    <section id="platforms" class="section">
+        <div class="container">
+            <h2 class="section-title">Platform RR.CORP</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Jelajahi semua platform inovatif yang dikembangkan oleh RR.CORP</p>
+            <div class="platforms-grid">
+                <div class="platform-card fade-in">
+                    <div class="platform-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="platform-title">Website Utama</h3>
+                    <p>Portal resmi RR.CORP dengan informasi terbaru tentang semua proyek dan perkembangan.</p>
+                    <a href="https://rahmatagustiar.netlify.app/" target="_blank" class="btn">Kunjungi</a>
+                </div>
+                <div class="platform-card fade-in delay-1">
+                    <div class="platform-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="platform-title">NEXUS Platform</h3>
+                    <p>Pusat kontrol untuk semua proyek AI dan blockchain dalam ekosistem RR.CORP.</p>
+                    <a href="https://iacnnexus.netlify.app/" target="_blank" class="btn">Kunjungi</a>
+                </div>
+                <div class="platform-card fade-in delay-2">
+                    <div class="platform-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="platform-title">AI Assistant</h3>
+                    <p>Asisten AI canggih yang siap membantu dengan berbagai kebutuhan dan informasi.</p>
+                    <a href="https://rrcorpnexusai.netlify.app/" target="_blank" class="btn">Kunjungi</a>
+                </div>
+                <div class="platform-card fade-in delay-3">
+                    <div class="platform-icon">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <h3 class="platform-title">Web3OpenProjek</h3>
+                    <p>Platform pendanaan terdesentralisasi untuk proyek-proyek inovatif berbasis Web3.</p>
+                    <a href="https://web3openprojek.netlify.app/" target="_blank" class="btn">Kunjungi</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // AI Chatbot functionality
-    function sendMessage() {
-      const userInput = document.getElementById('user-input');
-      const message = userInput.value.trim();
-      
-      if (message === '') return;
-      
-      // Add user message to chat
-      addMessage(message, 'user');
-      
-      // Process and generate response
-      setTimeout(() => {
-        const response = generateResponse(message);
-        addMessage(response, 'bot');
-      }, 1000);
-      
-      // Clear input
-      userInput.value = '';
-    }
-    
-    function addMessage(text, sender) {
-      const chatBox = document.getElementById('chat-box');
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message', `${sender}-message`);
-      messageDiv.textContent = text;
-      chatBox.appendChild(messageDiv);
-      
-      // Scroll to bottom
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-    
-    function generateResponse(input) {
-      const lowerInput = input.toLowerCase();
-      
-      // Define responses based on keywords
-      if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
-        return "Hello there! How can I assist you with RR.CORP today?";
-      } else if (lowerInput.includes('project') || lowerInput.includes('initiative')) {
-        return "RR.CORP is working on multiple AI and Web3 projects including AI assistants, blockchain platforms, and decentralized funding systems.";
-      } else if (lowerInput.includes('contact') || lowerInput.includes('email') || lowerInput.includes('reach')) {
-        return "You can reach us through our social media channels or via our website contact forms.";
-      } else if (lowerInput.includes('ai') || lowerInput.includes('artificial intelligence')) {
-        return "RR.CORP develops advanced AI systems for various applications including natural language processing, computer vision, and predictive analytics.";
-      } else if (lowerInput.includes('web3') || lowerInput.includes('blockchain') || lowerInput.includes('crypto')) {
-        return "Our Web3 initiatives focus on decentralized applications, smart contracts, and blockchain-based solutions for various industries.";
-      } else if (lowerInput.includes('funding') || lowerInput.includes('donate') || lowerInput.includes('invest')) {
-        return "We have a Web3 funding platform at web3openprojek.netlify.app where you can support innovative projects.";
-      } else {
-        return "Thank you for your message. Is there anything specific you'd like to know about RR.CORP and our projects?";
-      }
-    }
-    
-    // Allow sending message with Enter key
-    document.getElementById('user-input').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        sendMessage();
-      }
-    });
-    
-    // Add some initial messages to demonstrate the chat
-    setTimeout(() => {
-      addMessage("You can ask me about RR.CORP projects, AI technology, Web3 initiatives, or how to get involved!", 'bot');
-    }, 2000);
-  </script>
+    <!-- Social Media Section -->
+    <section id="social" class="section">
+        <div class="container">
+            <h2 class="section-title">Media Sosial RR.CORP</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Ikuti semua media sosial RR.CORP untuk update terbaru</p>
+            <div class="social-grid">
+                <div class="social-card fade-in">
+                    <div class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>TikTok</h3>
+                    <p>@rr.corp</p>
+                    <a href="https://tiktok.com/@rr.corp" target="_blank" class="btn">Ikuti</a>
+                </div>
+                <div class="social-card fade-in delay-1">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube</h3>
+                    <p>@RRCORP.company</p>
+                    <a href="https://youtube.com/@RRCORP.company" target="_blank" class="btn">Ikuti</a>
+                </div>
+                <div class="social-card fade-in delay-2">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>Twitter</h3>
+                    <p>@Companyrrcorp</p>
+                    <a href="https://x.com/Companyrrcorp" target="_blank" class="btn">Ikuti</a>
+                </div>
+                <div class="social-card fade-in delay-3">
+                    <div class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>RRCORP-hub</p>
+                    <a href="https://github.com/RRCORP-hub" target="_blank" class="btn">Ikuti</a>
+                </div>
+                <div class="social-card fade-in">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>@rr.corp.official</p>
+                    <a href="https://instagram.com/rr.corp.official" target="_blank" class="btn">Ikuti</a>
+                </div>
+                <div class="social-card fade-in delay-1">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>RR.CORP Holding</p>
+                    <a href="https://facebook.com/RR.CORP Holding" target="_blank" class="btn">Ikuti</a>
+                </div>
+                <div class="social-card fade-in delay-2">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>RR.CORP Holding</p>
+                    <a href="https://linkedin.com/company/rrcorp-holding" target="_blank" class="btn">Ikuti</a>
+                </div>
+                <div class="social-card fade-in delay-3">
+                    <div class="social-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>rrcorpcommunity</p>
+                    <a href="https://t.me/rrcorpcommunity" target="_blank" class="btn">Ikuti</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section id="ai" class="section">
+        <div class="container">
+            <h2 class="section-title">AI Assistant RR.CORP</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Berinteraksilah dengan asisten AI canggih untuk informasi tentang RR.CORP</p>
+            <div class="ai-assistant">
+                <div class="chat-container" id="chat-container">
+                    <div class="message bot-message">
+                        Halo! Saya AI Assistant RR.CORP. Ada yang bisa saya bantu?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ketik pertanyaan Anda di sini...">
+                    <button class="btn" id="send-message">Kirim</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang RR.CORP</h2>
+            <div class="about-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="margin-bottom: 30px; font-size: 1.1rem;">
+                    RR.CORP adalah ekosistem teknologi yang didirikan oleh Rahmat Agustiar, berfokus pada pengembangan solusi AI, Web3, dan blockchain yang inovatif. 
+                    Dengan visi menciptakan "Infinite AI Civilization NEXUS", kami membangun platform yang mendukung terciptanya masyarakat masa depan yang terhubung secara cerdas dan terdesentralisasi.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://rahmatagustiar.netlify.app/" target="_blank" class="btn">Website Utama</a>
+                    <a href="mailto:contact@rrcorp.com" class="btn btn-accent">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i>
+                        RR<span>.CORP</span>
+                    </div>
+                    <p>Ekosistem teknologi AI dan Web3 yang inovatif untuk menciptakan peradaban masa depan.</p>
+                    <div class="social-links">
+                        <a href="https://tiktok.com/@rr.corp" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@RRCORP.company" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/Companyrrcorp" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/RRCORP-hub" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/rr.corp.official" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/rrcorpcommunity" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#platforms">Platform</a></li>
+                        <li><a href="#social">Media Sosial</a></li>
+                        <li><a href="#ai">AI Assistant</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="https://rahmatagustiar.netlify.app/" target="_blank">Website Utama</a></li>
+                        <li><a href="https://iacnnexus.netlify.app/" target="_blank">NEXUS Platform</a></li>
+                        <li><a href="https://rrcorpnexusai.netlify.app/" target="_blank">AI Assistant</a></li>
+                        <li><a href="https://web3openprojek.netlify.app/" target="_blank">Web3OpenProjek</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 RR.CORP. All Rights Reserved. | Dibuat dengan ❤️ oleh Rahmat Agustiar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 10;
+                const duration = Math.random() * 10 + 10;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animation = `floatParticle ${duration}s linear ${delay}s infinite`;
+                
+                container.appendChild(particle);
+            }
+            
+            // Add keyframes for particle animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes floatParticle {
+                    0% {
+                        transform: translate(0, 0) rotate(0deg);
+                        opacity: 0.7;
+                    }
+                    25% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(90deg);
+                    }
+                    50% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(180deg);
+                    }
+                    75% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(270deg);
+                    }
+                    100% {
+                        transform: translate(0, 0) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create particles
+            createParticles();
+            
+            // Initialize wallet connection
+            initWallet();
+            
+            // Initialize AI assistant
+            initAIAssistant();
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+
+        // Initialize wallet connection
+        function initWallet() {
+            const connectBtn = document.getElementById('connectWallet');
+            const walletInfo = document.getElementById('walletInfo');
+            const walletStatus = document.getElementById('walletStatus');
+            
+            // Check if MetaMask is installed
+            if (typeof window.ethereum !== 'undefined') {
+                // Check if already connected
+                ethereum.request({ method: 'eth_accounts' })
+                    .then(accounts => {
+                        if (accounts.length > 0) {
+                            const shortAddress = `${accounts[0].substring(0, 6)}...${accounts[0].substring(accounts[0].length - 4)}`;
+                            walletStatus.textContent = shortAddress;
+                            walletInfo.classList.add('connected');
+                            connectBtn.textContent = 'Terhubung';
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                    });
+                
+                // Connect wallet button
+                connectBtn.addEventListener('click', () => {
+                    ethereum.request({ method: 'eth_requestAccounts' })
+                        .then(accounts => {
+                            const shortAddress = `${accounts[0].substring(0, 6)}...${accounts[0].substring(accounts[0].length - 4)}`;
+                            walletStatus.textContent = shortAddress;
+                            walletInfo.classList.add('connected');
+                            connectBtn.textContent = 'Terhubung';
+                            showNotification('Wallet berhasil terhubung!');
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            showNotification('Gagal menghubungkan wallet.', true);
+                        });
+                });
+                
+                // Listen for account changes
+                ethereum.on('accountsChanged', (accounts) => {
+                    if (accounts.length === 0) {
+                        walletStatus.textContent = 'Belum Terhubung';
+                        walletInfo.classList.remove('connected');
+                        connectBtn.textContent = 'Hubungkan Wallet';
+                    } else {
+                        const shortAddress = `${accounts[0].substring(0, 6)}...${accounts[0].substring(accounts[0].length - 4)}`;
+                        walletStatus.textContent = shortAddress;
+                        walletInfo.classList.add('connected');
+                        connectBtn.textContent = 'Terhubung';
+                    }
+                });
+            } else {
+                connectBtn.textContent = 'Instal MetaMask';
+                connectBtn.addEventListener('click', () => {
+                    window.open('https://metamask.io/download.html', '_blank');
+                });
+            }
+        }
+
+        // Initialize AI assistant
+        function initAIAssistant() {
+            const chatContainer = document.getElementById('chat-container');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-message');
+            
+            // Send message function
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                // Add user message
+                addMessage(message, 'user');
+                
+                // Generate and add bot response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+                
+                // Clear input
+                userInput.value = '';
+            }
+            
+            // Add message to chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', `${sender}-message`);
+                messageDiv.textContent = text;
+                chatContainer.appendChild(messageDiv);
+                
+                // Scroll to bottom
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+            
+            // Generate AI response
+            function generateAIResponse(input) {
+                const lowerInput = input.toLowerCase();
+                
+                // Define responses based on keywords
+                if (lowerInput.includes('halo') || lowerInput.includes('hai') || lowerInput.includes('hi')) {
+                    return "Halo! Senang bertemu dengan Anda. Ada yang bisa saya bantu tentang RR.CORP?";
+                } else if (lowerInput.includes('apa itu rr.corp') || lowerInput.includes('tentang rr.corp')) {
+                    return "RR.CORP adalah ekosistem teknologi yang didirikan oleh Rahmat Agustiar, berfokus pada pengembangan solusi AI, Web3, dan blockchain yang inovatif.";
+                } else if (lowerInput.includes('platform') || lowerInput.includes('aplikasi')) {
+                    return "RR.CORP memiliki beberapa platform utama: Website Utama, NEXUS Platform, AI Assistant, dan Web3OpenProjek. Anda dapat mengakses semuanya melalui website ini.";
+                } else if (lowerInput.includes('web3') || lowerInput.includes('blockchain')) {
+                    return "RR.CORP mengembangkan berbagai solusi Web3 dan blockchain, termasuk platform pendanaan terdesentralisasi Web3OpenProjek.";
+                } else if (lowerInput.includes('ai') || lowerInput.includes('kecerdasan buatan')) {
+                    return "Kami mengembangkan AI canggih untuk berbagai aplikasi, termasuk asisten virtual, analisis data, dan sistem rekomendasi.";
+                } else if (lowerInput.includes('media sosial') || lowerInput.includes('sosmed')) {
+                    return "RR.CORP hadir di berbagai platform media sosial: TikTok, YouTube, Twitter, GitHub, Instagram, Facebook, LinkedIn, dan Telegram.";
+                } else if (lowerInput.includes('rahmat agustiar') || lowerInput.includes('pendiri')) {
+                    return "Rahmat Agustiar adalah pendiri dan CEO RR.CORP, seorang innovator dalam bidang AI, Web3, dan teknologi blockchain.";
+                } else {
+                    return "Terima kasih atas pertanyaannya. Sebagai AI Assistant RR.CORP, saya siap membantu Anda menjelajahi ekosistem teknologi kami. Ada hal khusus yang ingin Anda ketahui?";
+                }
+            }
+            
+            // Event listeners
+            sendButton.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        }
+
+        // Show notification
+        function showNotification(message, isError = false) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '30px';
+            notification.style.right = '30px';
+            notification.style.padding = '15px 25px';
+            notification.style.background = isError ? 'rgba(255, 62, 62, 0.9)' : 'rgba(0, 255, 142, 0.9)';
+            notification.style.color = 'white';
+            notification.style.borderRadius = '10px';
+            notification.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+            notification.style.zIndex = '1002';
+            notification.style.opacity = '0';
+            notification.style.transition = 'opacity 0.3s ease';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.style.opacity = '1';
+            }, 10);
+            
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
+    </script>
 </body>
-</html>
+  </html>
